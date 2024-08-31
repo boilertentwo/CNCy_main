@@ -1,7 +1,7 @@
 'use client'
 import { useAuthStore } from "@/lib/zustand/store"
 import { useEffect } from "react"
-import { Bell, Home, LogIn, ShoppingCart } from "lucide-react"
+import { Bell, Home, LogIn, Send, ShoppingCart } from "lucide-react"
 import { Dashboard } from "./Dashboard"
 import Link from "next/link"
 import Negativehold from "./Negaviteholder"
@@ -15,8 +15,16 @@ const Homelink = ()=> {
     return(
         <>
             <Link href={'/'}>
-                <h1 className='text-yellow-500 italic content-center font-serif text-3xl font-bold '>orderBook</h1>   
+                <h1 className='bg-gradient-to-r from-amber-300 to-amber-700 shadow-lg bg-clip-text text-transparent italic content-center font-serif text-3xl font-bold '>orderBook</h1>   
             </Link>
+            
+            {/* <Link href={'/'}>
+                    <div className="h-10 w-48 flex items-center justify-center bg-gradient-to-r from-amber-400 to-amber-700 rounded-xl px-4 py-2">
+                        <h1 className=" text-slate-950 italic font-serif text-2xl font-black">
+                        CNCy
+                        </h1>
+                    </div>
+            </Link> */}
         </>
     )
 } 
@@ -26,7 +34,7 @@ const LoginLink =() => {
     return(
         <>
             <Link href={'/login'}>
-                    <LogIn/>
+                    <LogIn className="stroke-amber-400"/>
                 </Link>
         </>
     )
@@ -65,13 +73,13 @@ export default function Header(){
                         <h1>Home</h1>
                         <Home/>
                     </Link>
+                    <Link className="flex flex-row gap-2" href={'/postbox'}>
+                    <h1>PostBox</h1>
+                    <Send/>
+                    </Link>
                     <Link className="flex flex-row gap-2" href={'/orders'}>
                     <h1>Orders</h1>
                     <ShoppingCart/>
-                    </Link>
-                    <Link className="flex flex-row gap-2" href={'/notification'}>
-                    <h1>Notifications</h1>
-                    <Bell/>
                     </Link>
                     <Logout/>
                 </Negativehold>
@@ -85,7 +93,7 @@ export default function Header(){
                 <div className="md:hidden flex">
                 <Negativehold loader={CircleLoad} negative={LoginLink}>
                     <Link href={'/orders'}>
-                        <ShoppingCart/>
+                        <ShoppingCart className="stroke-amber-300"/>
                     </Link>
                 </Negativehold>
                 </div>

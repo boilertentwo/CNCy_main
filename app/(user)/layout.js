@@ -1,16 +1,20 @@
 import Header from "@/components/Header";
+import { StatusFlag } from "./_lib/StatusFlag";
+import { USstatusflag } from "@/lib/appwrite.config";
+
 export const metadata = {
     title: "Craft N Carve | orderBook",
   
     description: "Get CNC crafts at lowest price",
   };
-import Statusbar from "@/components/StatusMessage";
+
+
 export default function UserLayout({children}){
     return(
         <>
             <main>
                 <Header></Header>
-                <Statusbar/>
+                <USstatusflag/>
                 {children}
             </main>
         </>

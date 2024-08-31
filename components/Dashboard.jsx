@@ -1,4 +1,4 @@
-import { Bell, Handshake, Home, Menu, ShoppingCart } from "lucide-react";
+import { Bell, Handshake, Home, Menu, Send, ShoppingCart } from "lucide-react";
 import Link from "next/link";
 
 import {
@@ -27,7 +27,7 @@ export function Dashboard(){
 
             
             <Sheet >
-            <SheetTrigger className="md:hidden"><Menu/></SheetTrigger>
+            <SheetTrigger className="md:hidden"><Menu className="stroke-amber-400" /></SheetTrigger>
             <SheetContent side={'left'}>
                 <SheetHeader>
                 <SheetTitle className='text-yellow-500 text-2xl mt-4 text-left'>Explore</SheetTitle>
@@ -41,7 +41,16 @@ export function Dashboard(){
                         <span>Home</span>        
                         <Home/>
                 </SheetClose>
-                </Link>    
+                </Link> 
+
+                <Link href={'/postbox'}>
+                <SheetClose className="w-full gap-10 flex flex-row justify-between items-center p-2">
+                        <span>Postbox</span>        
+                        <Send/>
+                </SheetClose>
+                </Link>  
+
+
                 <Link href={'/orders'}>
                 <SheetClose className="w-full gap-10 flex flex-row justify-between items-center p-2">
                         <span>Orders</span>        
@@ -49,12 +58,8 @@ export function Dashboard(){
                 </SheetClose>
                 </Link>    
                 
-                <Link href={'/notification'}>
-                <SheetClose className="w-full gap-10 flex flex-row justify-between items-center p-2">
-                        <span>Notification</span>        
-                        <Bell/>
-                </SheetClose>
-                </Link>      
+                
+
                 <Separator/>
                 </div>
                 <SheetFooter>

@@ -89,7 +89,7 @@ export default function UserOrders({ orders }) {
                     </AccordionContent>
                   </AccordionItem>
                 </Accordion>
-                <div className="h-12 px-6 bg-transparent">
+                <div className="h-12 pt-2 px-6 bg-transparent">
                   <OrderProgress verified={obj.verified} crafted={obj.crafted} delivered={obj.delievered} />
                 </div>
               </div>

@@ -52,9 +52,7 @@ const UserMessage = ({register}) => {
     )
 }
 
-const makeToast = ({title,description}) => {
-    toast(title,{description:description})
-}
+
 
 export function UserReference() {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
@@ -86,34 +84,34 @@ export function UserReference() {
     },[errors, isLoggedIn])
    
     const onSubmit = async(data) => {
-       
-
         setLoading(true);
         setHasError(false); // Reset error state on valid form submission
-
-        const queryHeight = parseFloat(data.height);
-        const queryWidth =  parseFloat(data.width) ;
-        const queryImage = data.image[0]; // Get the first file from the FileList
-        if (queryImage) {
-            const arrayBuffer = await queryImage.arrayBuffer(); // Convert the file to ArrayBuffer
-            const buffer = new Uint8Array(arrayBuffer);
-            const publicId = await uploadUserImage(buffer).then((result)=>{return result}).catch((error)=>{toast('Error occured',{description:'Keep image size within 10mb'})});
-            
-            if(!isLoggedIn){
-                const orderObj = { imageId: publicId, height: queryHeight, width: queryWidth };
-                setOrderObj(orderObj)
+    
+        try {
+            const queryHeight = parseFloat(data.height);
+            const queryWidth = parseFloat(data.width);
+            const queryImage = data.image[0]; // Get the first file from the FileList
+    
+            if (queryImage) {
+                const arrayBuffer = await queryImage.arrayBuffer(); // Convert the file to ArrayBuffer
+                const buffer = new Uint8Array(arrayBuffer);
+                const publicId = await uploadUserImage(buffer);
+    
+                if (!isLoggedIn) {
+                    const orderObj = { imageId: publicId, height: queryHeight, width: queryWidth };
+                    setOrderObj(orderObj);
+                } else {
+                    const orderObj = { imageId: publicId, height: queryHeight, width: queryWidth, contactUserAt: userId, loggedUser: true };
+                    await makePost(orderObj);
+                    toast("Your post reached us", { description: "We'll reach out to you in 24 hours" });
+                }
             }
-            else{
-                const orderObj = { imageId: publicId, height: queryHeight, width: queryWidth,contactUserAt: userId, loggedUser: true };
-                makePost(orderObj).then((result)=>{toast("You post reached us",{description:"We'll reach out to you in 24 hours"})}).catch((error)=>{toast('Please try again!',{description:'While posting error occured'})})
-                reset();
-            }
-        } else {
-            console.log("image hasn't uploaded")
+        } catch (error) {
+            toast('Error occurred', { description: 'Keep image size within 10mb' });
+            setHasError(true);
+        } finally {
+            setLoading(false);
         }
-        
-       
-        setLoading(false);
     }
     const submitContact = () =>{
         const nonUserOrder = {...orderObject,contactUserAt:contact,loggedUser:false}

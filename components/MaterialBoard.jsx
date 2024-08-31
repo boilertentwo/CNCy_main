@@ -34,13 +34,13 @@ export default function MaterialsSection() {
         {/* MS (upcoming) */}
         <div className="relative w-36 h-36 border-2 border-dashed border-amber-500 rounded-lg flex flex-col items-center justify-center bg-gradient-to-r from-gray-400 via-gray-300 to-gray-100 text-gray-700">
           <span className="text-center font-bold">MS</span>
-          <span className="absolute w-full text-center top-2 text-xs text-white bg-amber-600 px-2 py-1 rounded-full animate-pulse">
+          <span className="absolute w-full text-center top-2 text-xs text-white bg-amber-600 px-2 py-1 rounded-full ">
             Coming Soon
           </span>
         </div>
         <div className="relative w-36 h-36 border-2 border-dashed border-amber-500 rounded-lg flex flex-col items-center justify-center bg-gradient-to-r from-sky-400 via-sky-300 to-gray-500 text-gray-700">
           <span className="text-center font-bold">Letters</span>
-          <span className="absolute w-full text-center top-2 text-xs text-white bg-amber-600 px-2 py-1 rounded-full animate-pulse">
+          <span className="absolute w-full text-center top-2 text-xs text-white bg-amber-600 px-2 py-1 rounded-full ">
             Coming Soon
           </span>
         </div>

@@ -1,7 +1,9 @@
 export default function Aboutuspage(){
+    
+    
     return(
         <>
-            <span>About us</span>
+            <h1></h1>
         </>
     )
 }
