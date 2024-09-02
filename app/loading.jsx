@@ -1,3 +1,4 @@
+
 import CircleLoad from "@/components/Circleloader";
 
 
@@ -9,4 +10,5 @@ export default function Loaderpage(){
             </main>
         </>
     )
+
 }
