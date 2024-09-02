@@ -1,9 +1,9 @@
 export const metadata = {
-    title: 'Gallery | orderBook',
-    description: 'CNCy | Craft and carve.'
+    title: 'Form | orderBook',
+    description: 'CNCy | Craft and Carve'
 }
 
-export default function ModelLayout({children}){
+export default function FormLayout({children}){
     return(
         <>
             <main>

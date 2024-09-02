@@ -3,18 +3,19 @@ import { StatusFlag } from "./_lib/StatusFlag";
 import { USstatusflag } from "@/lib/appwrite.config";
 
 export const metadata = {
-    title: "Craft N Carve | orderBook",
+    title: "CNCy | Craft and Carve",
   
-    description: "Get CNC crafts at lowest price",
+    description: "Get CNC crafts at best price. Delivery option available.",
   };
 
 
-export default function UserLayout({children}){
+export default function UserLayout({children,modal}){
     return(
         <>
             <main>
                 <Header></Header>
                 <USstatusflag/>
+                {modal}
                 {children}
             </main>
         </>

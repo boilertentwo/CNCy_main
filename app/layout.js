@@ -9,9 +9,9 @@ import Footer from "@/components/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Craft N Carve | orderBook",
+  title: "CNCy | Craft and Carve",
 
-  description: "Get CNC crafts at lowest price",
+  description: "Get CNC crafts at best price per sqft. Delivery option available!",
 };
 
 export default function RootLayout({ children }) { 

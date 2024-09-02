@@ -6,6 +6,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
 import CraftOrder from "./CraftingOrder";
 
 import AdminVerifyOrders from "./VerifyOrder";
+import { DeliverOrders } from './DeliverOrders';
 
 
 
@@ -69,7 +70,7 @@ export default function ListAdOrders({ orders }) {
           )}
         </TabsContent>
         <TabsContent value="deliver" className='w-full flex flex-col gap-2 lg:flex-row lg:flex-wrap'>
-          {deliverOrders.length > 0 ? <span>{deliverOrders.length} orders ready to deliver</span>:<span>No orders for delivery</span>}
+          {deliverOrders.length > 0 ? <DeliverOrders Deliver={deliverOrders}/>:<span>No orders for delivery</span>}
         </TabsContent>
         <TabsContent value='paid' className='w-full flex flex-col gap-2 lg:flex-row lg:flex-wrap'>
           {paidOrders.length>0?<span>{paidOrders.length} paid orders</span>:<span>No paid orders yet</span>}

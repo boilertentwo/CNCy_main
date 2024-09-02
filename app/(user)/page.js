@@ -5,6 +5,8 @@ import AutoScrollSection from '@/components/MaterialBoard';
 import { USherobox, USpostbox } from '@/lib/appwrite.config';
 import HeroSection from './_lib/HeroSection';
 import { PostBox } from './_lib/PostBox';
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
 export const HeroSlider = ({ title, bgImage }) => {
   return (
@@ -50,7 +52,7 @@ export default function Home() {
         </div> 
         {/* <HeroSection/> */}
         <AutoScrollSection/>
-
+        {/* <Button><Link href='/register'>Register</Link></Button> */}
         <div className='hidden min-h-48 w-full text-center md:flex flex-col gap-2 justify-center items-center'><span className='md:text-3xl lg:text-4xl font-extrabold '>or choose from our catalogue</span><span className='font-light bg-gradient-to-r from-sky-200 to-sky-700 bg-clip-text text-transparent md:text-lg lg:text-xl'>Click on any design to get instant quotation</span></div>
         <div className="h-full w-full text-xl font-bold flex flex-row lg:text-2xl justify-start items-center mt-1 px-4"><span className='bg-gradient-to-r from-amber-300 to-amber-900 bg-clip-text text-transparent'>Panels</span></div>   
         {/* <ClientImageGallery/> */}

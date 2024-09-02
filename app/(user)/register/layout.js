@@ -1,6 +1,6 @@
 export const metadata = {
     title:'Profile | orderBook',
-    description:'Get CNC crafts at nominal prices'
+    description:'CNC | Craft and Carve'
 }
 
 export default function ProfileLayout({children}){

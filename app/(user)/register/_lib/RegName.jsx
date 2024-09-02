@@ -7,14 +7,17 @@ import { Label } from "@/components/ui/label";
 import { updateUserDetails } from "@/lib/appwrite.config";
 import { useForm } from "react-hook-form";
 import { redirect } from "next/navigation";
-
+import { useRouter } from "next/navigation";
 export function RegisterName() {
+
+    const router = useRouter()
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
     const submitName = (data) => {
         updateUserDetails(data.username)
             .then(() => {
                 toast(`Hello ${data.username}`, { description: 'Your name registered successfully.', action: { label: 'Home', onClick: () => redirect('/') } });
                 reset();
+                router.back();
             })
             .catch((error) => toast('Try again!', { description: 'Error occurred while updating name' }));
     };

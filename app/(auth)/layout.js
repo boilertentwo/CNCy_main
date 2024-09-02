@@ -5,7 +5,7 @@ import { USstatusflag } from "@/lib/appwrite.config";
 export const metadata = {
     title: "Login | orderBook",
   
-    description: "Get CNC crafts at lowest price",
+    description: "CNCy | Craft and Carve",
   };
 
 export default function AuthLayout({children}){

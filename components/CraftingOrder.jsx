@@ -95,6 +95,10 @@ export default function CraftOrder({ craftOrders }) {
                         <strong>Border:</strong>
                         <span>{obj.border} mm</span>
                       </div>
+                      <div className="flex justify-between font-bold text-white">
+                        <strong>Code:</strong>
+                        <span>{obj.code} mm</span>
+                      </div>
 
                       <div className="flex justify-between font-bold text-white">
                         <strong>Total:</strong>
