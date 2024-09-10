@@ -7,6 +7,7 @@ import HeroSection from './_lib/HeroSection';
 import { PostBox } from './_lib/PostBox';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import { Badge } from '@/components/ui/badge';
 
 export const HeroSlider = ({ title, bgImage }) => {
   return (
@@ -29,8 +30,9 @@ export const HeroSlider = ({ title, bgImage }) => {
 };
 
 export default function Home() {
-  const folder1 = "ms-crafts AND tags=medium"
-  const folder2 = "ms-crafts AND tags=lg"
+  const folder = 'panels'
+  const tag1 = ' AND tags=partition'
+  const tag2 = ' AND tags=false-ceiling'
   return (
     <>
       <main className='h-full w-full p-3 flex flex-col justify-start items-center gap-5 overflow-y-auto scroll-smooth'>
@@ -53,10 +55,10 @@ export default function Home() {
         {/* <HeroSection/> */}
         <AutoScrollSection/>
         {/* <Button><Link href='/register'>Register</Link></Button> */}
-        <div className='hidden min-h-48 w-full text-center md:flex flex-col gap-2 justify-center items-center'><span className='md:text-3xl lg:text-4xl font-extrabold '>or choose from our catalogue</span><span className='font-light bg-gradient-to-r from-sky-200 to-sky-700 bg-clip-text text-transparent md:text-lg lg:text-xl'>Click on any design to get instant quotation</span></div>
-        <div className="h-full w-full text-xl font-bold flex flex-row lg:text-2xl justify-start items-center mt-1 px-4"><span className='bg-gradient-to-r from-amber-300 to-amber-900 bg-clip-text text-transparent'>Panels</span></div>   
+        <div className='hidden lg:flex lg:min-h-48 w-full text-center md:flex flex-col gap-2 justify-center items-center'><span className=' md:text-3xl lg:text-4xl font-extrabold '>or choose from our catalogue</span><span className='h-12 font-light bg-gradient-to-r from-sky-200 to-sky-700 bg-clip-text text-transparent md:text-lg lg:text-xl'>Click on any design to get instant quotation</span></div>
+          
         {/* <ClientImageGallery/> */}
-        <ServeImages folder={folder2}/>
+        <ServeImages tags={tag1} folder={folder}/>
         
         {/* <USpostbox/> */}
         <PostBox/>
@@ -67,9 +69,12 @@ export default function Home() {
         </div> */}
 
 
-        <div className="h-full w-full text-amber-300 text-xl font-bold flex flex-row lg:text-2xl justify-start items-center mt-1 px-3"><span className='bg-gradient-to-r from-amber-300 to-amber-900 bg-clip-text text-transparent'>Borders</span></div>   
-        <ServeImages folder={folder1}/>
-         
+        {/* <div className="h-full w-full text-amber-300 text-xl font-bold flex flex-row lg:text-2xl md:justify-start lg:justify-between items-center mt-1 px-3">
+          <span className='bg-gradient-to-r from-amber-300 to-amber-900 bg-clip-text text-transparent'>Borders</span>
+          <Badge className='hidden lg:flex bg-amber-500'><strong>{'more >'}</strong></Badge>
+        </div>   
+        // <ServeImages folder={folder1}/> */}
+         <ServeImages tags={tag2} folder={folder}/>
       </main>
     </>
   );

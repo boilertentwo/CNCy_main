@@ -8,6 +8,7 @@ import { updateUserDetails } from "@/lib/appwrite.config";
 import { useForm } from "react-hook-form";
 import { redirect } from "next/navigation";
 import { useRouter } from "next/navigation";
+
 export function RegisterName() {
 
     const router = useRouter()

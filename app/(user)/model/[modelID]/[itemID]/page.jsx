@@ -154,7 +154,7 @@ export default function ImageForm({ params }) {
         </Accordion>
 
       </div>
-            <main className='h-screen w-full p-3 space-y-5 md:flex md:gap-10'>
+            <main className='h-full w-full p-3 space-y-5 md:flex md:gap-10'>
         <div className="relative max-h-[600px] md:w-4/5 border-2 border-amber-300 rounded-lg p-6 flex lg:mr-28 lg:px-28 lg:mt-4">
           {/* Image */}
           <div className="h-full absolute inset-0 p-3 flex-grow flex flex-row justify-center">

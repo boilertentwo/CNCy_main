@@ -10,12 +10,16 @@ import CircleLoad from "./Circleloader"
 import Logout from "./Logout"
 import { cookier } from "@/app/test"
 import { toast } from "sonner"
+import Image from "next/image"
 
 const Homelink = ()=> {
     return(
         <>
             <Link href={'/'}>
-                <h1 className='bg-gradient-to-r from-amber-300 to-amber-700 shadow-lg bg-clip-text text-transparent italic content-center font-serif text-3xl font-bold '>orderBook</h1>   
+                {/* <h1 className='bg-gradient-to-r from-amber-300 to-amber-700 shadow-lg bg-clip-text text-transparent italic content-center font-serif text-3xl font-bold '>orderBook</h1>    */}
+                <div className="flex justify-between items-center">
+                <Image src='/CNCyin.png' width={125} height={125} alt="Company logo"/>
+                </div>
             </Link>
             
             {/* <Link href={'/'}>

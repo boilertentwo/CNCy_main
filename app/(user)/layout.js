@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import { StatusFlag } from "./_lib/StatusFlag";
 import { USstatusflag } from "@/lib/appwrite.config";
+import Footer from "../_lib/Footer";
 
 export const metadata = {
     title: "CNCy | Craft and Carve",
@@ -17,6 +18,7 @@ export default function UserLayout({children,modal}){
                 <USstatusflag/>
                 {modal}
                 {children}
+                <Footer></Footer>
             </main>
         </>
     )
