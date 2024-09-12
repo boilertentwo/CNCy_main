@@ -11,7 +11,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata = {
   title: "CNCy | Craft and Carve",
 
-  description: "Get CNC crafts at best price per sqft. Delivery option available!",
+  description: "We deliver CNC crafts at best price with instant quotations.",
 };
 
 export default function RootLayout({ children }) { 
