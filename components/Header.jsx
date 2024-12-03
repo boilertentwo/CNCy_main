@@ -4,7 +4,8 @@ import { useEffect } from "react"
 import { Bell, Home, LogIn, Send, ShoppingCart } from "lucide-react"
 import { Dashboard } from "./Dashboard"
 import Link from "next/link"
-import Negativehold from "./Negaviteholder"
+// import { NegativeHold } from "@/lib/appwrite.config"
+import {Negativehold} from "./Negaviteholder"
 import Progresser from "./Loader"
 import CircleLoad from "./Circleloader"
 import Logout from "./Logout"
@@ -58,6 +59,7 @@ const Negative = () => {
         </>
     )
 }
+
 
 
 export default function Header(){

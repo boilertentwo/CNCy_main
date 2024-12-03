@@ -1,3 +1,21 @@
+'use client'
+
+import { haveUserDetails } from "@/lib/appwrite.config"
+import { useEffect } from "react"
+import { cookier } from "../test"
+
+export default function Test(){
+    useEffect(()=>{
+        cookier().then((res)=>console.log(res)).catch((error)=>console.log(error))
+    },[])
+    
+    return(
+        <>
+            <h1>TEst</h1>
+        </>
+    )
+}
+
 // 'use client';
 // import { useState, useMemo } from 'react';
 // import { Button } from '@/components/ui/button';

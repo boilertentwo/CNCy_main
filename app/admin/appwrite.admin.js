@@ -1,4 +1,5 @@
 'use server'
+import {ID} from 'node-appwrite'
 import ListAdOrders from "@/components/ListAdmin"
 import { createSessionClient, createAdminClient } from "@/lib/appwrite.config"
 import Link from "next/link"
@@ -41,6 +42,18 @@ export const updateUserDocument = async(docId, update)=>{
         )
         return result
 
+    } catch (error) {
+        throw error
+    }
+}
+
+
+export const messageUser = async (message,userId) => {
+    const {messaging} = await createAdminClient()
+    try {
+       const response = await messaging.createSms(
+
+       )
     } catch (error) {
         throw error
     }

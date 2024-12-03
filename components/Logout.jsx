@@ -26,8 +26,8 @@ export default function Logout() {
       useAuthStore.persist.clearStorage()
       toast("You're Logged out!",{description:"Login to get follow back on orders",action:{label:'Home', onClick:()=>router.push('/')}})
   }
-
-  const handleLogout = () => {
+  //
+  const handleLogout = async () => {
     // try {
     //   await clearSession(); 
     //   Logout(); 
@@ -36,7 +36,7 @@ export default function Logout() {
     // } catch (error) {
     //   console.error('Error logging out:', error);
     // }
-    clearSession().then(loggingOut).catch((error)=>{toast("Error occured",{description:"While logging user out."})})
+    await clearSession().then(loggingOut).catch((error)=>{toast("Error occured",{description:"While logging user out."})})
   };
 
   return (

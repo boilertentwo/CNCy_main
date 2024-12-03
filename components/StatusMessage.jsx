@@ -1,7 +1,7 @@
 'use client'
 import Link from "next/link";
 import Progresser from "./Loader";
-import Negativehold from "./Negaviteholder";
+import {Negativehold} from "./Negaviteholder";
 
 function Flagstatus(){
     

@@ -15,8 +15,9 @@ export function HeroBox({user}){
                                 <AccordionContent>
                                     <div className='p-4 bg-transparent '>
                                     <ol className='flex flex-col justify-around'>
-                                        <li>1. Use Post us to get instant quotations on any designs you have.</li>
-                                        <li>2. Use our catalogue to get instant quotations on any designs</li>
+                                        <li>1. Click on any material type to view design catalogue.</li>
+                                        <li>2. Click on any design to get instant quotation.</li>
+                                        <li>3. Use PostBox to get quotation for any design you have.</li>
                                     </ol>
                                     </div>
                                 </AccordionContent>
