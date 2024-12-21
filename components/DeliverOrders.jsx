@@ -4,6 +4,8 @@ import Link from "next/link";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./ui/accordion";
 import { RelativeTime } from "./ListAdmin";
 import { Separator } from "./ui/separator";
+import { toast } from "sonner";
+import { updateUserDocument } from "@/app/admin/appwrite.admin";
 
 export function DeliverOrders({ Deliver }) {
   const addressCodeOrders = Deliver.reduce((acc, order) => {
@@ -13,6 +15,17 @@ export function DeliverOrders({ Deliver }) {
     acc[order.addresscode].push(order);
     return acc;
   }, {});
+
+  const handleSubmit = (id) => {
+    const delievered = {'delievered':true, 'paid':true}
+    updateUserDocument(id,delievered)
+      .then((result)=>
+        {toast('Order delievered.',{description:'Payment went through'})
+         router.refresh()
+        })
+      .catch((error)=>toast('Error occured',{description:'Check for network connection!'}))
+  }
+
 
   return (
     <>
@@ -27,7 +40,7 @@ export function DeliverOrders({ Deliver }) {
 
                   <div className="w-full flex justify-between items-center text-slate-400 p-4">
                     <div className="flex justify-around items-center">
-                      <Input type="checkbox" />
+                     
                       <strong className="text-lg font-medium text-white text-emerald-500">
                         {orders[0].addresscode}
                       </strong>
@@ -65,7 +78,7 @@ export function DeliverOrders({ Deliver }) {
               </AccordionItem>
            
           </Accordion>
-          <div className="w-full p-4 flex justify-end items-center">
+          <div className="w-full p-4 flex justify-end items-center gap-2">
             <Button
               className="w-full lg:w-1/2"
               variant="outline"
@@ -73,6 +86,13 @@ export function DeliverOrders({ Deliver }) {
               <Link href={`tel:${orders[0].userphone}`}>
                 Call
               </Link>
+            </Button>
+            <Button
+              className='w-full lg:w-1/2'
+              variant='secondary'
+              onClick={()=>handleSubmit(orders[0].$id)}
+            >
+              Paid
             </Button>
           </div>
         </div>

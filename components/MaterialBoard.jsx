@@ -14,19 +14,19 @@ export default function MaterialsSection() {
       </span>
       <div className="w-full flex flex-wrap justify-center lg:justify-between items-center gap-4 lg:overflow-x-auto text-black font-bold scrollbar-hide">
         {/* MDF */}
-        <div onClick={()=>router.push('/model/panels?type=mdf')} className="w-36 h-36 border-2 border-amber-300 rounded-lg flex flex-col items-center justify-center opacity-75 bg-gradient-to-r from-rose-600 to-white">
+        <div onClick={()=>router.push('/model/panels?type=mdf')} className="w-36 h-36 border-2 border-amber-300 rounded-lg flex flex-col items-center justify-center opacity-75 hover:bg-white bg-gradient-to-r from-rose-600 to-white">
           <span>MDF</span>
         </div>
         {/* WPC */}
-        <div onClick={()=>router.push('/model/panels?type=wpc')} className="w-36 h-36 border-2 border-amber-300 rounded-lg flex flex-col items-center justify-center opacity-75 bg-gradient-to-r from-amber-400 to-white">
+        <div onClick={()=>router.push('/model/panels?type=wpc')} className="w-36 h-36 border-2 border-amber-300 rounded-lg flex flex-col items-center justify-center opacity-75 hover:bg-white bg-gradient-to-r from-amber-400 to-white">
           <span>WPC</span>
         </div>
         {/* WOOD */}
-        <div onClick={()=>router.push('/model/panels?type=wood')} className="w-36 h-36 border-2 border-amber-300 rounded-lg flex flex-col items-center justify-center opacity-75 bg-gradient-to-r from-yellow-700 to-white">
+        <div onClick={()=>router.push('/model/panels?type=wood')} className="w-36 h-36 border-2 border-amber-300 rounded-lg flex flex-col items-center justify-center opacity-75 hover:bg-white bg-gradient-to-r from-yellow-700 to-white">
           <span>WOOD</span>
         </div>
         {/* ACRYLIC */}
-        <div onClick={()=>router.push('/model/panels?type=acrylic')} className="w-36 h-36 border-2 border-amber-300 rounded-lg flex flex-col items-center justify-center opacity-75 bg-gradient-to-r from-emerald-400 to-emerald-200">
+        <div onClick={()=>router.push('/model/panels?type=acrylic')} className="w-36 h-36 border-2 border-amber-300 rounded-lg flex flex-col items-center justify-center opacity-75 hover:bg-white bg-gradient-to-r from-emerald-400 to-emerald-200">
           <span>ACRYLIC</span>
         </div>
         {/* MS (upcoming) */}

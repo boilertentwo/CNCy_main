@@ -14,7 +14,7 @@ export default function ClientImageGallery({ images,folder }) {
     <section className='w-full flex flex-col justify-around items-center gap-5'>
     <div className="h-full w-full text-xl font-bold flex flex-row lg:text-2xl justify-between items-center mt-1 px-4">
           <span className='bg-gradient-to-r from-amber-300 to-amber-900 bg-clip-text text-transparent'>{Tag}</span>
-          <Badge className='flex bg-amber-500'><strong>{'more >'}</strong></Badge>
+          <Badge onClick={()=>router.push("/model/panels?type=mdf")} className='flex bg-amber-500'><strong>{'more >'}</strong></Badge>
     </div> 
     <div className="relative h-auto w-full flex flex-row justify-around  items-start p-2 scroll-smooth snap-mandatory snap-x overflow-x-auto gap-6">
       {

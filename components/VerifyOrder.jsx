@@ -23,7 +23,7 @@ export default function AdminVerifyOrders({ verifyOrders }) {
     const addresscode = Randomstring.generate(7);
     const updatePromises = orders.map((order) => {
       const updateVerified = { ...data, addresscode: addresscode, verified: true };
-      console.log(updateVerified);
+      
       return updateUserDocument(order.$id, updateVerified);
     });
 
